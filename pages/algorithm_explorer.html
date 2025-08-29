@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algorithm Explorer - Comprehensive Algorithm Library</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body class="bg-background text-text-primary">
+  <!-- Navigation Header -->
+  <nav class="bg-white shadow-md border-b border-border sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="homepage.html" class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-primary">Algorithm Visualizer</span>
+          </a>
+        </div>
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">Home</a>
+          <a href="algorithm_explorer.html" class="text-primary font-medium border-b-2 border-primary pb-1">Explore</a>
+          <a href="interactive_visualizer.html" class="text-text-secondary hover:text-primary transition-colors">Visualizer</a>
+          <a href="learning_pathways.html" class="text-text-secondary hover:text-primary transition-colors">Learn</a>
+          <a href="code_laboratory.html" class="text-text-secondary hover:text-primary transition-colors">Code Lab</a>
+          <a href="community_hub.html" class="text-text-secondary hover:text-primary transition-colors">Community</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Algorithm Explorer</h1>
+      <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+        Discover, learn, and master algorithms through our comprehensive library with intelligent search and visual previews.
+      </p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="max-w-2xl mx-auto mt-8">
+      <div class="relative shadow-md rounded-xl">
+        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <svg class="h-5 w-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+        <input type="text" id="searchInput" placeholder="Search algorithms... (e.g., 'quick sort', 'dijkstra', 'binary search')" 
+               class="w-full pl-12 pr-4 py-4 text-lg border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 bg-white" />
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-12">
+      <div class="text-center">
+        <div class="text-2xl font-bold text-primary">80+</div>
+        <div class="text-sm text-text-secondary">Algorithms</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-accent">11</div>
+        <div class="text-sm text-text-secondary">Categories</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-secondary">3</div>
+        <div class="text-sm text-text-secondary">Languages</div>
+      </div>
+      <div class="text-center">
+        <div class="text-2xl font-bold text-primary">100K+</div>
+        <div class="text-sm text-text-secondary">Visualizations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8">
+      
+      <!-- Categories Sidebar -->
+      <div class="lg:w-80 flex-shrink-0">
+        <div class="sidebar-categories sticky top-24 bg-white rounded-xl shadow-md border border-border p-6">
+          <h3 class="text-lg font-semibold text-primary mb-4 text-center">Categories</h3>
+          <div id="categoryList" class="flex flex-col gap-2">
+            <!-- Category items injected here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Algorithms Display -->
+      <div class="flex-1">
+        <div id="algorithmsContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Cards injected here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Category mapping
+    const categories = {
+      "All Algorithms": [].concat(
+        ["Bubble Sort","Selection Sort","Insertion Sort","Merge Sort","Quick Sort"],
+        ["Linear Search","Binary Search","Jump Search"],
+        ["Tower of Hanoi","N-Queens Problem"],
+        ["Activity Selection","Huffman Coding"],
+        ["Fibonacci","LCS","LIS"],
+        ["DFS","BFS","Dijkstra"],
+        ["Naive Matching","KMP Algorithm"],
+        ["Euclidean GCD","Sieve of Eratosthenes"],
+        ["Check power of 2","Count set bits"],
+        ["Union-Find","LRU Cache"]
+      ),
+      "Sorting Algorithms": ["Bubble Sort","Selection Sort","Insertion Sort","Merge Sort","Quick Sort","Heap Sort","Counting Sort"],
+      "Searching Algorithms": ["Linear Search","Binary Search"],
+      "Recursion & Backtracking": ["Tower of Hanoi","N-Queens Problem","Rat in a Maze","Sudoku Solver","Word Search / DFS","Hamiltonian Cycle","Knight’s Tour"],
+      "Greedy Algorithms": ["Activity Selection","Huffman Coding","Fractional Knapsack","Job Scheduling","Prim’s Algorithm","Kruskal’s Algorithm","Dijkstra’s Algorithm"],
+      "Divide & Conquer": ["Merge Sort","Quick Sort","Binary Search","Strassen’s Matrix Multiplication","Median of Medians","Maximum Subarray"],
+      "Dynamic Programming": ["Fibonacci","Longest Common Subsequence","Longest Increasing Subsequence","Matrix Chain Multiplication","0/1 Knapsack","Subset Sum","Coin Change","Rod Cutting","Edit Distance","Minimum Path Sum","Egg Dropping","Bellman-Ford","Floyd-Warshall"],
+      "Graph Algorithms": ["DFS","BFS","Topological Sort","Connected Components","Strongly Connected Components","Dijkstra","Bellman-Ford","Floyd-Warshall","Prim’s","Kruskal’s","Ford-Fulkerson","Edmonds-Karp","A* Algorithm"],
+      "String Algorithms": ["Naive Matching","KMP Algorithm","Rabin-Karp","Z Algorithm","Boyer-Moore","Trie Operations","Suffix Array","Suffix Tree","Aho-Corasick","Manacher’s Algorithm"],
+      "Mathematical Algorithms": ["Euclidean GCD","Extended Euclidean","Modular Exponentiation","Sieve of Eratosthenes","Miller-Rabin Test","Fermat’s Little Theorem","Chinese Remainder Theorem","Matrix Exponentiation","FFT"],
+      "Bit Manipulation": ["Check power of 2","Count set bits","XOR problems","Subset generation","Fast exponentiation with bits"],
+      "Advanced Algorithms": ["Union-Find","LRU Cache","Kahn’s Algorithm","Tarjan’s Algorithm","Trie + Matching","Segment Tree","Fenwick Tree","Sparse Table","Mo’s Algorithm"]
+    };
+
+    // Icons
+    const categoryIcons = {
+      "All Algorithms": `
+        <div class="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 4l-8 4 8 4 8-4-8-4zm0 6l-8 4 8 4 8-4-8-4z" />
+          </svg>
+        </div>
+      `,
+      "Sorting Algorithms": `
+        <div class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/>
+          </svg>
+        </div>
+      `,
+      "Searching Algorithms": `
+        <div class="flex-shrink-0 w-8 h-8 bg-secondary-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+      `,
+      "Recursion & Backtracking": `
+        <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+          </svg>
+        </div>
+      `,
+      "Greedy Algorithms": `
+        <div class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+          </svg>
+        </div>
+      `,
+      "Divide & Conquer": `
+        <div class="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16l2.879-2.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+      `,
+      "Dynamic Programming": `
+        <div class="flex-shrink-0 w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+      `,
+      "Graph Algorithms": `
+        <div class="flex-shrink-0 w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+          </svg>
+        </div>
+      `,
+      "String Algorithms": `
+        <div class="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/>
+          </svg>
+        </div>
+      `,
+      "Mathematical Algorithms": `
+        <div class="flex-shrink-0 w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/>
+          </svg>
+        </div>
+      `,
+      "Bit Manipulation": `
+        <div class="flex-shrink-0 w-8 h-8 bg-cyan-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+          </svg>
+        </div>
+      `,
+      "Advanced Algorithms": `
+        <div class="flex-shrink-0 w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center">
+          <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+      `
+    };
+
+    const categoryList = document.getElementById("categoryList");
+    let activeCategory = "All Algorithms"; // Default selected
+
+    function renderCategories() {
+      categoryList.innerHTML = "";
+      Object.keys(categories).forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = `category-item flex justify-between items-center px-4 py-3 rounded-lg transition ${
+          activeCategory === cat ? "bg-blue-50 text-blue-600 font-semibold border-l-4 border-blue-500" : "hover:bg-gray-100 text-text-secondary"
+        }`;
+        btn.innerHTML = `
+          <div class="flex items-center gap-2">
+            ${categoryIcons[cat] || ""}
+            <span class="truncate">${cat}</span>
+          </div>
+          <span class="count text-sm px-2 py-1 rounded-full bg-gray-200">${categories[cat].length}</span>
+        `;
+        btn.addEventListener("click", () => {
+          activeCategory = cat;
+          renderCategories();
+          displayAlgorithms(cat);
+        });
+        categoryList.appendChild(btn);
+      });
+    }
+    function renderCategories() {
+      categoryList.innerHTML = "";
+      Object.keys(categories).forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = `category-item flex justify-between items-center px-4 py-3 rounded-lg transition ${
+          activeCategory === cat ? "bg-blue-50 text-blue-600 font-semibold border-l-4 border-blue-500" : "hover:bg-gray-100 text-text-secondary"
+        }`;
+        btn.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="icon">${categoryIcons[cat] || "⚙️"}</span>
+            <span class="truncate">${cat}</span>
+          </div>
+          <span class="count text-sm px-2 py-1 rounded-full bg-gray-200">${categories[cat].length}</span>
+        `;
+        btn.addEventListener("click", () => {
+          activeCategory = cat;
+          renderCategories();
+          displayAlgorithms(cat);
+        });
+        categoryList.appendChild(btn);
+      });
+    }
+
+    function displayAlgorithms(category) {
+      const container = document.getElementById("algorithmsContainer");
+      container.innerHTML = "";
+      categories[category].forEach(algo => {
+        const card = document.createElement("div");
+        card.className = "card card-hover p-4 rounded-lg shadow-md bg-white";
+        card.innerHTML = `<h4 class="font-semibold text-lg mb-2">${algo}</h4>
+                          <p class="text-sm text-text-secondary">Learn and visualize ${algo} in detail.</p>`;
+        container.appendChild(card);
+      });
+    }
+
+    // Search functionality
+    const searchInput = document.getElementById("searchInput");
+    searchInput.addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      const container = document.getElementById("algorithmsContainer");
+      container.innerHTML = "";
+      Object.values(categories).flat().filter(algo => algo.toLowerCase().includes(query)).forEach(algo => {
+        const card = document.createElement("div");
+        card.className = "card card-hover p-4 rounded-lg shadow-md bg-white";
+        card.innerHTML = `<h4 class="font-semibold text-lg mb-2">${algo}</h4>
+                          <p class="text-sm text-text-secondary">Learn and visualize ${algo} in detail.</p>`;
+        container.appendChild(card);
+      });
+    });
+
+    // Init
+    renderCategories();
+    displayAlgorithms(activeCategory);
+  </script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Hub - Algorithm Visualizer</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Falgorithm1524back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-md border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-primary">Algorithm Visualizer</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="algorithm_explorer.html" class="text-text-secondary hover:text-primary transition-colors">Explore</a>
+                    <a href="interactive_visualizer.html" class="text-text-secondary hover:text-primary transition-colors">Visualizer</a>
+                    <a href="learning_pathways.html" class="text-text-secondary hover:text-primary transition-colors">Learn</a>
+                    <a href="code_laboratory.html" class="text-text-secondary hover:text-primary transition-colors">Code Lab</a>
+                    <a href="community_hub.html" class="text-primary font-medium border-b-2 border-primary pb-1">Community</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-text-secondary hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Community Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Community Hub</h1>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+                    Connect with fellow algorithm enthusiasts, share implementations, and learn together through collaborative problem-solving
+                </p>
+                
+                <!-- Community Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary">15.2K</div>
+                        <div class="text-sm text-text-secondary">Active Members</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent">2.8K</div>
+                        <div class="text-sm text-text-secondary">Algorithms Shared</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-secondary">890</div>
+                        <div class="text-sm text-text-secondary">Discussions Today</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary">4.5K</div>
+                        <div class="text-sm text-text-secondary">Solutions Posted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Main Feed (Left Column) -->
+                <div class="lg:col-span-3">
+                    <!-- Feed Filters -->
+                    <div class="bg-white rounded-lg shadow-md border border-border p-6 mb-6">
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center space-x-4">
+                                <h2 class="text-lg font-semibold text-primary">Community Feed</h2>
+                                <div class="flex items-center space-x-2">
+                                    <button class="px-3 py-1 bg-primary text-white rounded-full text-sm font-medium">All</button>
+                                    <button class="px-3 py-1 bg-gray-100 text-text-secondary rounded-full text-sm hover:bg-gray-200 transition-colors">Implementations</button>
+                                    <button class="px-3 py-1 bg-gray-100 text-text-secondary rounded-full text-sm hover:bg-gray-200 transition-colors">Discussions</button>
+                                    <button class="px-3 py-1 bg-gray-100 text-text-secondary rounded-full text-sm hover:bg-gray-200 transition-colors">Questions</button>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="btn-primary">
+                                    <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                    </svg>
+                                    New Post
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Algorithm of the Week -->
+                    <div class="bg-gradient-to-r from-accent-50 to-accent-100 rounded-lg border-2 border-accent-200 p-6 mb-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-accent-800">Algorithm of the Week</h3>
+                                <p class="text-accent-600">Community Challenge</p>
+                            </div>
+                        </div>
+                        <h4 class="text-lg font-semibold text-accent-800 mb-2">A* Pathfinding Algorithm</h4>
+                        <p class="text-accent-700 mb-4">
+                            This week's challenge: Implement A* pathfinding with custom heuristics. Share your creative approaches and optimizations!
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4 text-sm text-accent-600">
+                                <span>🏆 Prize: Premium Badge</span>
+                                <span>⏰ 3 days left</span>
+                                <span>👥 47 participants</span>
+                            </div>
+                            <button class="btn-accent">Join Challenge</button>
+                        </div>
+                    </div>
+
+                    <!-- Feed Posts -->
+                    <div class="space-y-6">
+                        <!-- Post 1: Implementation Share -->
+                        <div class="card">
+                            <div class="flex items-start space-x-4">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Alex Chen" class="w-12 h-12 rounded-full object-cover" onerror="this.src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <h4 class="font-semibold text-primary">Alex Chen</h4>
+                                        <span class="px-2 py-1 bg-accent-100 text-accent-700 rounded text-xs font-medium">Algorithm Expert</span>
+                                        <span class="text-sm text-text-secondary">2 hours ago</span>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-primary mb-2">Optimized QuickSort with 3-Way Partitioning</h3>
+                                    <p class="text-text-secondary mb-4">
+                                        Just implemented a 3-way partitioning QuickSort that handles duplicate elements more efficiently. 
+                                        Performance improvement of ~40% on datasets with many duplicates! 🚀
+                                    </p>
+                                    
+                                    <!-- Code Preview -->
+                                    <div class="bg-gray-50 rounded-lg p-4 mb-4 border border-border-light">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <span class="text-sm font-medium text-text-secondary">quicksort_3way.py</span>
+                                            <button class="text-primary hover:text-primary-700 text-sm">View Full Code</button>
+                                        </div>
+                                        <pre class="text-sm text-text-primary font-mono overflow-x-auto"><code>def quicksort_3way(arr, low, high):
+    if low < high:
+        lt, gt = partition_3way(arr, low, high)
+        quicksort_3way(arr, low, lt - 1)
+        quicksort_3way(arr, gt + 1, high)</code></pre>
+                                    </div>
+
+                                    <!-- Engagement Actions -->
+                                    <div class="flex items-center space-x-6 text-sm">
+                                        <button class="flex items-center space-x-1 text-text-secondary hover:text-accent transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L9 6v4m-2 4h2m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2z"/>
+                                            </svg>
+                                            <span>124</span>
+                                        </button>
+                                        <button class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                            </svg>
+                                            <span>18</span>
+                                        </button>
+                                        <button class="flex items-center space-x-1 text-text-secondary hover:text-secondary transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                            </svg>
+                                            <span>Share</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 2: Discussion Question -->
+                        <div class="card">
+                            <div class="flex items-start space-x-4">
+                                <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Sarah Kim" class="w-12 h-12 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <h4 class="font-semibold text-primary">Sarah Kim</h4>
+                                        <span class="px-2 py-1 bg-primary-100 text-primary-700 rounded text-xs font-medium">CS Student</span>
+                                        <span class="text-sm text-text-secondary">4 hours ago</span>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-primary mb-2">Help: When to use Dijkstra vs A* for pathfinding?</h3>
+                                    <p class="text-text-secondary mb-4">
+                                        I'm working on a game project and need to implement pathfinding. I understand both algorithms but I'm confused about when to choose one over the other. 
+                                        What are the practical considerations? Any performance comparisons?
+                                    </p>
+                                    
+                                    <!-- Tags -->
+                                    <div class="flex items-center space-x-2 mb-4">
+                                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 rounded text-xs">graph-algorithms</span>
+                                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 rounded text-xs">pathfinding</span>
+                                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 rounded text-xs">help-needed</span>
+                                    </div>
+
+                                    <!-- Engagement Actions -->
+                                    <div class="flex items-center space-x-6 text-sm">
+                                        <button class="flex items-center space-x-1 text-text-secondary hover:text-accent transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L9 6v4m-2 4h2m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2z"/>
+                                            </svg>
+                                            <span>67</span>
+                                        </button>
+                                        <button class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                            </svg>
+                                            <span>12 Answers</span>
+                                        </button>
+                                        <button class="btn-accent text-sm px-4 py-2">Answer Question</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post 3: Creative Implementation -->
+                        <div class="card">
+                            <div class="flex items-start space-x-4">
+                                <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Marcus Rodriguez" class="w-12 h-12 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <h4 class="font-semibold text-primary">Marcus Rodriguez</h4>
+                                        <span class="px-2 py-1 bg-secondary-100 text-secondary-700 rounded text-xs font-medium">Visualization Master</span>
+                                        <span class="text-sm text-text-secondary">6 hours ago</span>
+                                    </div>
+                                    <h3 class="text-lg font-semibold text-primary mb-2">Interactive Binary Tree Visualization with Sound</h3>
+                                    <p class="text-text-secondary mb-4">
+                                        Created an interactive binary tree that plays musical notes based on node values during traversal. 
+                                        Each algorithm (inorder, preorder, postorder) creates a unique melody! 🎵
+                                    </p>
+                                    
+                                    <!-- Media Preview -->
+                                    <div class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg p-6 mb-4 border border-border-light">
+                                        <div class="flex items-center justify-center h-32">
+                                            <div class="text-center">
+                                                <svg class="w-16 h-16 text-primary mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.5a2.5 2.5 0 011.414.586l.775.776a2.5 2.5 0 001.414.586H15M6 20l4.586-4.586a2 2 0 012.828 0L16 18"/>
+                                                </svg>
+                                                <p class="text-sm text-text-secondary">Interactive Demo Available</p>
+                                                <button class="btn-primary mt-2">Try Demo</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Engagement Actions -->
+                                    <div class="flex items-center space-x-6 text-sm">
+                                        <button class="flex items-center space-x-1 text-text-secondary hover:text-accent transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L9 6v4m-2 4h2m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2z"/>
+                                            </svg>
+                                            <span>89</span>
+                                        </button>
+                                        <button class="flex items-center space-x-1 text-text-secondary hover:text-primary transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                                            </svg>
+                                            <span>23</span>
+                                        </button>
+                                        <button class="flex items-center space-x-1 text-text-secondary hover:text-secondary transition-colors">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                            </svg>
+                                            <span>Save</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Load More -->
+                    <div class="text-center mt-8">
+                        <button class="btn-secondary">Load More Posts</button>
+                    </div>
+                </div>
+
+                <!-- Sidebar (Right Column) -->
+                <div class="lg:col-span-1">
+                    <!-- Top Contributors -->
+                    <div class="card mb-6">
+                        <h3 class="text-lg font-semibold text-primary mb-4">Top Contributors</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Dr. Emily Watson" class="w-10 h-10 rounded-full object-cover" onerror="this.src='https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-primary">Dr. Emily Watson</h4>
+                                    <p class="text-sm text-text-secondary">2,847 reputation</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="w-6 h-6 bg-accent rounded-full flex items-center justify-center">
+                                        <span class="text-xs text-white font-bold">1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Alex Chen" class="w-10 h-10 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-primary">Alex Chen</h4>
+                                    <p class="text-sm text-text-secondary">2,156 reputation</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="w-6 h-6 bg-gray-400 rounded-full flex items-center justify-center">
+                                        <span class="text-xs text-white font-bold">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-3">
+                                <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Marcus Rodriguez" class="w-10 h-10 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                                <div class="flex-1">
+                                    <h4 class="font-medium text-primary">Marcus Rodriguez</h4>
+                                    <p class="text-sm text-text-secondary">1,923 reputation</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center">
+                                        <span class="text-xs text-white font-bold">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-border">
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 text-sm font-medium">View Full Leaderboard →</a>
+                        </div>
+                    </div>
+
+                    <!-- Trending Topics -->
+                    <div class="card mb-6">
+                        <h3 class="text-lg font-semibold text-primary mb-4">Trending Topics</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-text-primary">#dynamic-programming</span>
+                                <span class="text-xs text-text-secondary">234 posts</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-text-primary">#graph-algorithms</span>
+                                <span class="text-xs text-text-secondary">189 posts</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-text-primary">#sorting-algorithms</span>
+                                <span class="text-xs text-text-secondary">156 posts</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-text-primary">#interview-prep</span>
+                                <span class="text-xs text-text-secondary">142 posts</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-text-primary">#optimization</span>
+                                <span class="text-xs text-text-secondary">98 posts</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card mb-6">
+                        <h3 class="text-lg font-semibold text-primary mb-4">Recent Activity</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <p class="text-text-primary">
+                                        <span class="font-medium">DataStructureFan</span> answered a question about Binary Trees
+                                    </p>
+                                    <p class="text-text-secondary text-xs">5 minutes ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <p class="text-text-primary">
+                                        <span class="font-medium">AlgoMaster</span> shared a new Merge Sort implementation
+                                    </p>
+                                    <p class="text-text-secondary text-xs">12 minutes ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-2">
+                                <div class="w-2 h-2 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                                <div>
+                                    <p class="text-text-primary">
+                                        <span class="font-medium">CS_Student_2025</span> joined the A* Challenge
+                                    </p>
+                                    <p class="text-text-secondary text-xs">18 minutes ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-border">
+                            <a href="javascript:void(0)" class="text-primary hover:text-primary-700 text-sm font-medium">View All Activity →</a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-primary mb-4">Quick Actions</h3>
+                        <div class="space-y-3">
+                            <button class="w-full btn-primary text-left">
+                                <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                                </svg>
+                                Ask a Question
+                            </button>
+                            <button class="w-full btn-secondary text-left">
+                                <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                </svg>
+                                Share Algorithm
+                            </button>
+                            <button class="w-full btn-accent text-left">
+                                <svg class="w-4 h-4 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                                Join Challenge
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="text-lg font-bold">Algorithm Visualizer</span>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Making complex algorithms accessible through elegant visualization and interactive learning.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="algorithm_explorer.html" class="text-primary-200 hover:text-white transition-colors">Algorithm Library</a></li>
+                        <li><a href="interactive_visualizer.html" class="text-primary-200 hover:text-white transition-colors">Visualizer</a></li>
+                        <li><a href="learning_pathways.html" class="text-primary-200 hover:text-white transition-colors">Learning Paths</a></li>
+                        <li><a href="code_laboratory.html" class="text-primary-200 hover:text-white transition-colors">Code Lab</a></li>
+                    </ul>
+                </div>
+
+                <!-- Community -->
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="community_hub.html" class="text-primary-200 hover:text-white transition-colors">Discussion Forum</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Contributors</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">GitHub</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Discord</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-700 mt-8 pt-8 text-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 Algorithm Visualizer. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

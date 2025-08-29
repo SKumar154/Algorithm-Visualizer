@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm Visualizer - See Algorithms in Action</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Falgorithm1524back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-md border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-primary">Algorithm Visualizer</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-primary font-medium border-b-2 border-primary pb-1">Home</a>
+                    <a href="algorithm_explorer.html" class="text-text-secondary hover:text-primary transition-colors">Explore</a>
+                    <a href="interactive_visualizer.html" class="text-text-secondary hover:text-primary transition-colors">Visualizer</a>
+                    <a href="learning_pathways.html" class="text-text-secondary hover:text-primary transition-colors">Learn</a>
+                    <a href="code_laboratory.html" class="text-text-secondary hover:text-primary transition-colors">Code Lab</a>
+                    <a href="community_hub.html" class="text-text-secondary hover:text-primary transition-colors">Community</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-text-secondary hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Live Algorithm Visualization -->
+    <section class="relative bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
+                        See Algorithms <span class="text-gradient">in Action</span>
+                    </h1>
+                    <p class="text-xl text-text-secondary mb-8 max-w-2xl">
+                        Transform abstract data structures and algorithms into intuitive visual experiences. 
+                        Master complex concepts through step-by-step interactive visualizations.
+                    </p>
+                    
+                    <!-- Primary CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                        <a href="algorithm_explorer.html" class="btn-primary text-center">
+                            Start Visualizing
+                            <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <button class="btn-secondary text-center">
+                            <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.5a2.5 2.5 0 011.414.586l.775.776a2.5 2.5 0 001.414.586H15M6 20l4.586-4.586a2 2 0 012.828 0L16 18"/>
+                            </svg>
+                            Watch Demo (3 min)
+                        </button>
+                    </div>
+
+                    <!-- Social Proof Metrics -->
+                    <div class="grid grid-cols-3 gap-6 text-center lg:text-left">
+                        <div>
+                            <div class="text-2xl font-bold text-primary">500K+</div>
+                            <div class="text-sm text-text-secondary">Visualizations Created</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-primary">50+</div>
+                            <div class="text-sm text-text-secondary">Algorithms Available</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-primary">100K+</div>
+                            <div class="text-sm text-text-secondary">Students Learning</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Algorithm Visualization -->
+                <div class="relative">
+                    <div class="bg-white rounded-2xl shadow-floating p-8 border border-border-light">
+                        <div class="text-center mb-6">
+                            <h3 class="text-lg font-semibold text-primary mb-2">QuickSort Visualization</h3>
+                            <p class="text-sm text-text-secondary">Watch the algorithm sort data in real-time</p>
+                        </div>
+                        
+                        <!-- Sorting Bars Animation -->
+                        <div class="flex items-end justify-center space-x-1 h-32 mb-6">
+                            <div class="w-6 bg-primary-400 rounded-t transition-all duration-800" style="height: 60%"></div>
+                            <div class="w-6 bg-accent-400 rounded-t transition-all duration-800" style="height: 85%"></div>
+                            <div class="w-6 bg-secondary-400 rounded-t transition-all duration-800" style="height: 40%"></div>
+                            <div class="w-6 bg-primary-600 rounded-t transition-all duration-800" style="height: 95%"></div>
+                            <div class="w-6 bg-accent-500 rounded-t transition-all duration-800" style="height: 70%"></div>
+                            <div class="w-6 bg-secondary-500 rounded-t transition-all duration-800" style="height: 30%"></div>
+                            <div class="w-6 bg-primary-500 rounded-t transition-all duration-800" style="height: 80%"></div>
+                            <div class="w-6 bg-accent-600 rounded-t transition-all duration-800" style="height: 50%"></div>
+                        </div>
+
+                        <!-- Control Buttons -->
+                        <div class="flex justify-center space-x-3">
+                            <button class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent-600 transition-colors">
+                                Play
+                            </button>
+                            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300 transition-colors">
+                                Pause
+                            </button>
+                            <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300 transition-colors">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Algorithms Carousel -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Popular Algorithm Visualizations</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Explore our most engaging algorithm visualizations, from fundamental sorting to advanced graph algorithms
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- QuickSort Card -->
+                <div class="card card-hover group cursor-pointer" onclick="window.location.href='interactive_visualizer.html'">
+                    <div class="relative mb-4">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="QuickSort Algorithm" class="w-full h-32 object-cover rounded-lg" onerror="this.src='https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-primary bg-opacity-20 rounded-lg group-hover:bg-opacity-30 transition-all"></div>
+                        <div class="absolute top-2 right-2 bg-primary text-white px-2 py-1 rounded text-xs font-medium">
+                            Sorting
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">QuickSort</h3>
+                    <p class="text-text-secondary mb-4">Divide-and-conquer sorting with O(n log n) average complexity</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-accent font-medium">⭐ 4.9 (2.3k views)</span>
+                        <span class="text-sm text-text-secondary">~5 min</span>
+                    </div>
+                </div>
+
+                <!-- Dijkstra's Algorithm Card -->
+                <div class="card card-hover group cursor-pointer" onclick="window.location.href='interactive_visualizer.html'">
+                    <div class="relative mb-4">
+                        <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dijkstra's Algorithm" class="w-full h-32 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-secondary bg-opacity-20 rounded-lg group-hover:bg-opacity-30 transition-all"></div>
+                        <div class="absolute top-2 right-2 bg-secondary text-white px-2 py-1 rounded text-xs font-medium">
+                            Graph
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Dijkstra's Algorithm</h3>
+                    <p class="text-text-secondary mb-4">Find shortest paths in weighted graphs with visual exploration</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-accent font-medium">⭐ 4.8 (1.8k views)</span>
+                        <span class="text-sm text-text-secondary">~8 min</span>
+                    </div>
+                </div>
+
+                <!-- Binary Search Card -->
+                <div class="card card-hover group cursor-pointer" onclick="window.location.href='interactive_visualizer.html'">
+                    <div class="relative mb-4">
+                        <img src="https://images.pixabay.com/photo/2016/11/30/20/58/programming-1873854_1280.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Binary Search Algorithm" class="w-full h-32 object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-accent bg-opacity-20 rounded-lg group-hover:bg-opacity-30 transition-all"></div>
+                        <div class="absolute top-2 right-2 bg-accent text-white px-2 py-1 rounded text-xs font-medium">
+                            Search
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary mb-2">Binary Search</h3>
+                    <p class="text-text-secondary mb-4">Efficient O(log n) search through sorted arrays</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-accent font-medium">⭐ 4.7 (3.1k views)</span>
+                        <span class="text-sm text-text-secondary">~3 min</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="algorithm_explorer.html" class="btn-secondary">
+                    Explore All Algorithms
+                    <svg class="w-5 h-5 ml-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Pathways Section -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Choose Your Learning Path</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Structured learning journeys designed for every skill level, from complete beginners to advanced practitioners
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Beginner Fundamentals -->
+                <div class="card card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary">Beginner Fundamentals</h3>
+                            <p class="text-sm text-text-secondary">Perfect for CS students</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-6">
+                        Start with basic sorting and searching algorithms. Build a solid foundation with visual learning.
+                    </p>
+                    
+                    <!-- Progress Indicator -->
+                    <div class="mb-4">
+                        <div class="flex justify-between text-sm text-text-secondary mb-2">
+                            <span>Progress</span>
+                            <span>0/12 completed</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-accent h-2 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-sm text-text-secondary">⏱️ ~6 weeks</span>
+                        <span class="text-sm text-accent font-medium">Free</span>
+                    </div>
+
+                    <a href="learning_pathways.html" class="w-full btn-accent text-center block">Start Learning</a>
+                </div>
+
+                <!-- Interview Preparation -->
+                <div class="card card-hover border-2 border-primary relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-xs font-medium">Most Popular</span>
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary">Interview Preparation</h3>
+                            <p class="text-sm text-text-secondary">For job seekers</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-6">
+                        Master the most common interview algorithms with complexity analysis and optimization techniques.
+                    </p>
+                    
+                    <!-- Progress Indicator -->
+                    <div class="mb-4">
+                        <div class="flex justify-between text-sm text-text-secondary mb-2">
+                            <span>Progress</span>
+                            <span>0/25 completed</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-sm text-text-secondary">⏱️ ~8 weeks</span>
+                        <span class="text-sm text-primary font-medium">Premium</span>
+                    </div>
+
+                    <a href="learning_pathways.html" class="w-full btn-primary text-center block">Start Preparation</a>
+                </div>
+
+                <!-- Advanced Algorithms -->
+                <div class="card card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary">Advanced Algorithms</h3>
+                            <p class="text-sm text-text-secondary">For experienced developers</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-6">
+                        Explore complex algorithms like network flows, advanced graph algorithms, and optimization techniques.
+                    </p>
+                    
+                    <!-- Progress Indicator -->
+                    <div class="mb-4">
+                        <div class="flex justify-between text-sm text-text-secondary mb-2">
+                            <span>Progress</span>
+                            <span>0/18 completed</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-secondary h-2 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="text-sm text-text-secondary">⏱️ ~10 weeks</span>
+                        <span class="text-sm text-secondary font-medium">Premium</span>
+                    </div>
+
+                    <a href="learning_pathways.html" class="w-full btn-secondary text-center block">Explore Advanced</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials & Social Proof -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Loved by Students & Engineers</h2>
+                <p class="text-lg text-text-secondary">Join thousands who've mastered algorithms through visualization</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Sarah Chen" class="w-12 h-12 rounded-full object-cover mr-4" onerror="this.src='https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-semibold text-primary">Sarah Chen</h4>
+                            <p class="text-sm text-text-secondary">CS Student, MIT</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        "Finally understood QuickSort after struggling for weeks. The step-by-step visualization made everything click!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Marcus Johnson" class="w-12 h-12 rounded-full object-cover mr-4" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-semibold text-primary">Marcus Johnson</h4>
+                            <p class="text-sm text-text-secondary">Software Engineer, Google</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        "Aced my technical interviews thanks to the interview prep track. The complexity analysis section is gold!"
+                    </p>
+                    <div class="flex text-yellow-400">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Dr. Emily Rodriguez" class="w-12 h-12 rounded-full object-cover mr-4" onerror="this.src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <div>
+                            <h4 class="font-semibold text-primary">Dr. Emily Rodriguez</h4>
+                            <p class="text-sm text-text-secondary">CS Professor, Stanford</p>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary mb-4">
+                        "I use this platform in my algorithms course. Students grasp concepts 3x faster with these visualizations."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Activity Feed -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Live Community Activity</h2>
+                <p class="text-lg text-text-secondary">See what the community is learning right now</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
+                <div class="space-y-4">
+                    <!-- Activity Item 1 -->
+                    <div class="flex items-center space-x-4 p-4 bg-accent-50 rounded-lg">
+                        <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                        <div class="flex-1">
+                            <p class="text-sm">
+                                <span class="font-medium text-primary">Alex_Dev</span> completed 
+                                <span class="font-medium text-accent">Merge Sort</span> visualization
+                            </p>
+                            <p class="text-xs text-text-secondary">2 minutes ago</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity Item 2 -->
+                    <div class="flex items-center space-x-4 p-4 bg-primary-50 rounded-lg">
+                        <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                        <div class="flex-1">
+                            <p class="text-sm">
+                                <span class="font-medium text-primary">CS_Student_2025</span> started 
+                                <span class="font-medium text-primary">Interview Preparation</span> track
+                            </p>
+                            <p class="text-xs text-text-secondary">5 minutes ago</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity Item 3 -->
+                    <div class="flex items-center space-x-4 p-4 bg-secondary-50 rounded-lg">
+                        <div class="w-2 h-2 bg-secondary rounded-full animate-pulse"></div>
+                        <div class="flex-1">
+                            <p class="text-sm">
+                                <span class="font-medium text-primary">DataStructureFan</span> shared 
+                                <span class="font-medium text-secondary">Binary Tree Traversal</span> implementation
+                            </p>
+                            <p class="text-xs text-text-secondary">8 minutes ago</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity Item 4 -->
+                    <div class="flex items-center space-x-4 p-4 bg-accent-50 rounded-lg">
+                        <div class="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                        <div class="flex-1">
+                            <p class="text-sm">
+                                <span class="font-medium text-primary">AlgoMaster</span> achieved 
+                                <span class="font-medium text-accent">Graph Algorithms Expert</span> badge
+                            </p>
+                            <p class="text-xs text-text-secondary">12 minutes ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-6">
+                    <a href="community_hub.html" class="text-primary hover:text-primary-700 font-medium">
+                        View All Activity →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="text-lg font-bold">Algorithm Visualizer</span>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Making complex algorithms accessible through elegant visualization and interactive learning.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="algorithm_explorer.html" class="text-primary-200 hover:text-white transition-colors">Algorithm Library</a></li>
+                        <li><a href="interactive_visualizer.html" class="text-primary-200 hover:text-white transition-colors">Visualizer</a></li>
+                        <li><a href="learning_pathways.html" class="text-primary-200 hover:text-white transition-colors">Learning Paths</a></li>
+                        <li><a href="code_laboratory.html" class="text-primary-200 hover:text-white transition-colors">Code Lab</a></li>
+                    </ul>
+                </div>
+
+                <!-- Community -->
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="community_hub.html" class="text-primary-200 hover:text-white transition-colors">Discussion Forum</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Contributors</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">GitHub</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Discord</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-700 mt-8 pt-8 text-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 Algorithm Visualizer. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

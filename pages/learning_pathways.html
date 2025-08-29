@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Pathways - Algorithm Visualizer</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Falgorithm1524back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-md border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-primary">Algorithm Visualizer</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="algorithm_explorer.html" class="text-text-secondary hover:text-primary transition-colors">Explore</a>
+                    <a href="interactive_visualizer.html" class="text-text-secondary hover:text-primary transition-colors">Visualizer</a>
+                    <a href="learning_pathways.html" class="text-primary font-medium border-b-2 border-primary pb-1">Learn</a>
+                    <a href="code_laboratory.html" class="text-text-secondary hover:text-primary transition-colors">Code Lab</a>
+                    <a href="community_hub.html" class="text-text-secondary hover:text-primary transition-colors">Community</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-text-secondary hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 via-white to-secondary-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    Your Algorithm Learning <span class="text-gradient">Journey</span>
+                </h1>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
+                    Master algorithms through structured pathways designed for every skill level. 
+                    Track your progress, earn achievements, and build expertise step by step.
+                </p>
+                
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary">3</div>
+                        <div class="text-sm text-text-secondary">Learning Tracks</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary">120+</div>
+                        <div class="text-sm text-text-secondary">Lessons</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary">50+</div>
+                        <div class="text-sm text-text-secondary">Practice Problems</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Tracks Overview -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Fundamentals Track -->
+                <div class="card card-hover border-2 border-accent relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-accent text-white px-3 py-1 rounded-full text-xs font-medium">Beginner Friendly</span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-2">Fundamentals Track</h3>
+                        <p class="text-text-secondary">Perfect for CS students and coding beginners</p>
+                    </div>
+
+                    <!-- Progress Overview -->
+                    <div class="mb-6">
+                        <div class="flex justify-between text-sm text-text-secondary mb-2">
+                            <span>Your Progress</span>
+                            <span>3/15 completed</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="bg-accent h-3 rounded-full transition-all duration-500" style="width: 20%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Key Topics -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-primary mb-3">What You'll Learn:</h4>
+                        <ul class="space-y-2 text-sm text-text-secondary">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Big O Notation & Complexity Analysis
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Basic Sorting Algorithms
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Linear & Binary Search
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Basic Data Structures
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Track Info -->
+                    <div class="flex items-center justify-between mb-6 text-sm">
+                        <span class="text-text-secondary">⏱️ 6-8 weeks</span>
+                        <span class="text-accent font-medium">Free</span>
+                    </div>
+
+                    <button class="w-full btn-accent" onclick="window.location.href='#fundamentals-roadmap'">
+                        Continue Learning
+                    </button>
+                </div>
+
+                <!-- Interview Preparation Track -->
+                <div class="card card-hover border-2 border-primary relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-primary text-white px-3 py-1 rounded-full text-xs font-medium">Most Popular</span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-2">Interview Preparation</h3>
+                        <p class="text-text-secondary">For job seekers and career advancement</p>
+                    </div>
+
+                    <!-- Progress Overview -->
+                    <div class="mb-6">
+                        <div class="flex justify-between text-sm text-text-secondary mb-2">
+                            <span>Your Progress</span>
+                            <span>0/25 completed</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="bg-primary h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Key Topics -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-primary mb-3">What You'll Master:</h4>
+                        <ul class="space-y-2 text-sm text-text-secondary">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                FAANG Interview Problems
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Dynamic Programming Patterns
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                System Design Algorithms
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Optimization Techniques
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Track Info -->
+                    <div class="flex items-center justify-between mb-6 text-sm">
+                        <span class="text-text-secondary">⏱️ 8-12 weeks</span>
+                        <span class="text-primary font-medium">Premium</span>
+                    </div>
+
+                    <button class="w-full btn-primary" onclick="window.location.href='#interview-roadmap'">
+                        Start Preparation
+                    </button>
+                </div>
+
+                <!-- Advanced Algorithms Track -->
+                <div class="card card-hover border-2 border-secondary">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-secondary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-2">Advanced Algorithms</h3>
+                        <p class="text-text-secondary">For experienced developers</p>
+                    </div>
+
+                    <!-- Progress Overview -->
+                    <div class="mb-6">
+                        <div class="flex justify-between text-sm text-text-secondary mb-2">
+                            <span>Your Progress</span>
+                            <span>0/18 completed</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-3">
+                            <div class="bg-secondary h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Key Topics -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-primary mb-3">Advanced Topics:</h4>
+                        <ul class="space-y-2 text-sm text-text-secondary">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Network Flow Algorithms
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                String Matching Algorithms
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Computational Geometry
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                Advanced Graph Theory
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Track Info -->
+                    <div class="flex items-center justify-between mb-6 text-sm">
+                        <span class="text-text-secondary">⏱️ 10-16 weeks</span>
+                        <span class="text-secondary font-medium">Premium</span>
+                    </div>
+
+                    <button class="w-full btn-secondary" onclick="window.location.href='#advanced-roadmap'">
+                        Explore Advanced
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Roadmap - Fundamentals Track -->
+    <section id="fundamentals-roadmap" class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Fundamentals Learning Roadmap</h2>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+                    Your step-by-step journey through essential algorithms and data structures
+                </p>
+            </div>
+
+            <!-- Progress Timeline -->
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 bg-border h-full hidden lg:block"></div>
+                
+                <!-- Timeline Items -->
+                <div class="space-y-12">
+                    <!-- Week 1-2: Big O Notation -->
+                    <div class="flex flex-col lg:flex-row items-center">
+                        <div class="lg:w-1/2 lg:pr-8 mb-6 lg:mb-0">
+                            <div class="card bg-white border-l-4 border-accent">
+                                <div class="flex items-center mb-4">
+                                    <div class="step-indicator completed mr-4">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-primary">Big O Notation</h3>
+                                        <p class="text-sm text-text-secondary">Week 1-2 • Completed</p>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary mb-4">
+                                    Master time and space complexity analysis. Understand how to evaluate algorithm efficiency.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-accent font-medium">✓ 3/3 lessons completed</span>
+                                    <button class="text-primary hover:text-primary-700 text-sm font-medium">
+                                        Review →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pl-8">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Big O Notation Visualization" class="w-full h-48 object-cover rounded-lg shadow-md" onerror="this.src='https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        </div>
+                    </div>
+
+                    <!-- Week 3-4: Sorting Algorithms -->
+                    <div class="flex flex-col lg:flex-row-reverse items-center">
+                        <div class="lg:w-1/2 lg:pl-8 mb-6 lg:mb-0">
+                            <div class="card bg-white border-l-4 border-primary">
+                                <div class="flex items-center mb-4">
+                                    <div class="step-indicator active mr-4">2</div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-primary">Sorting Algorithms</h3>
+                                        <p class="text-sm text-text-secondary">Week 3-4 • In Progress</p>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary mb-4">
+                                    Learn bubble sort, selection sort, insertion sort, and merge sort with visual comparisons.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-primary font-medium">📚 2/4 lessons completed</span>
+                                    <button class="btn-primary text-sm px-4 py-2" onclick="window.location.href='interactive_visualizer.html'">
+                                        Continue
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pr-8">
+                            <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Sorting Algorithms" class="w-full h-48 object-cover rounded-lg shadow-md" onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        </div>
+                    </div>
+
+                    <!-- Week 5-6: Search Algorithms -->
+                    <div class="flex flex-col lg:flex-row items-center">
+                        <div class="lg:w-1/2 lg:pr-8 mb-6 lg:mb-0">
+                            <div class="card bg-white border-l-4 border-gray-300">
+                                <div class="flex items-center mb-4">
+                                    <div class="step-indicator mr-4">3</div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-primary">Search Algorithms</h3>
+                                        <p class="text-sm text-text-secondary">Week 5-6 • Upcoming</p>
+                                    </div>
+                                </div>
+                                <p class="text-text-secondary mb-4">
+                                    Master linear search and binary search. Understand when to use each approach.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-text-secondary">🔒 0/3 lessons</span>
+                                    <span class="text-sm text-text-secondary">Locked</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2 lg:pl-8">
+                            <img src="https://images.pixabay.com/photo/2016/11/30/20/58/programming-1873854_1280.png" alt="Search Algorithms" class="w-full h-48 object-cover rounded-lg shadow-md opacity-60" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement System -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Your Achievements</h2>
+                <p class="text-lg text-text-secondary">Track your progress and celebrate milestones</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Earned Badge -->
+                <div class="card text-center bg-gradient-to-br from-accent-50 to-accent-100 border-accent">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-primary mb-2">Complexity Master</h3>
+                    <p class="text-sm text-text-secondary mb-3">Completed Big O Notation track</p>
+                    <span class="text-xs bg-accent text-white px-2 py-1 rounded-full">Earned</span>
+                </div>
+
+                <!-- In Progress Badge -->
+                <div class="card text-center border-primary-200">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-primary mb-2">Sorting Specialist</h3>
+                    <p class="text-sm text-text-secondary mb-3">Master all sorting algorithms</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-primary h-2 rounded-full" style="width: 50%"></div>
+                    </div>
+                    <span class="text-xs text-primary">50% Complete</span>
+                </div>
+
+                <!-- Locked Badge -->
+                <div class="card text-center opacity-60">
+                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-400 mb-2">Search Expert</h3>
+                    <p class="text-sm text-gray-400 mb-3">Complete search algorithms</p>
+                    <span class="text-xs bg-gray-200 text-gray-500 px-2 py-1 rounded-full">Locked</span>
+                </div>
+
+                <!-- Future Badge -->
+                <div class="card text-center opacity-60">
+                    <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-gray-400 mb-2">Data Structure Pro</h3>
+                    <p class="text-sm text-gray-400 mb-3">Master data structures</p>
+                    <span class="text-xs bg-gray-200 text-gray-500 px-2 py-1 rounded-full">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personalized Recommendations -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Recommended for You</h2>
+                <p class="text-lg text-text-secondary">Based on your progress and interests</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Next Lesson Recommendation -->
+                <div class="card card-hover border-2 border-primary">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-primary">Next Up</h3>
+                            <p class="text-sm text-text-secondary">Continue your journey</p>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-semibold text-primary mb-2">Merge Sort Deep Dive</h4>
+                    <p class="text-text-secondary mb-4">
+                        Learn the divide-and-conquer approach with step-by-step visualization.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-text-secondary">⏱️ 25 min</span>
+                        <button class="btn-primary text-sm px-4 py-2" onclick="window.location.href='interactive_visualizer.html'">
+                            Start Lesson
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Practice Recommendation -->
+                <div class="card card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-primary">Practice</h3>
+                            <p class="text-sm text-text-secondary">Reinforce learning</p>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-semibold text-primary mb-2">Sorting Challenge</h4>
+                    <p class="text-text-secondary mb-4">
+                        Test your understanding with interactive sorting problems.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-text-secondary">🎯 5 problems</span>
+                        <button class="btn-accent text-sm px-4 py-2" onclick="window.location.href='code_laboratory.html'">
+                            Practice Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Community Recommendation -->
+                <div class="card card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-primary">Community</h3>
+                            <p class="text-sm text-text-secondary">Join discussions</p>
+                        </div>
+                    </div>
+                    <h4 class="text-lg font-semibold text-primary mb-2">Algorithm Study Group</h4>
+                    <p class="text-text-secondary mb-4">
+                        Connect with other learners working on similar topics.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-text-secondary">👥 24 members</span>
+                        <button class="btn-secondary text-sm px-4 py-2" onclick="window.location.href='community_hub.html'">
+                            Join Group
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="text-lg font-bold">Algorithm Visualizer</span>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Making complex algorithms accessible through elegant visualization and interactive learning.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Explore</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="algorithm_explorer.html" class="text-primary-200 hover:text-white transition-colors">Algorithm Library</a></li>
+                        <li><a href="interactive_visualizer.html" class="text-primary-200 hover:text-white transition-colors">Visualizer</a></li>
+                        <li><a href="learning_pathways.html" class="text-primary-200 hover:text-white transition-colors">Learning Paths</a></li>
+                        <li><a href="code_laboratory.html" class="text-primary-200 hover:text-white transition-colors">Code Lab</a></li>
+                    </ul>
+                </div>
+
+                <!-- Community -->
+                <div>
+                    <h4 class="font-semibold mb-4">Community</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="community_hub.html" class="text-primary-200 hover:text-white transition-colors">Discussion Forum</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Contributors</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">GitHub</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Discord</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-primary-200 hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-primary-700 mt-8 pt-8 text-center">
+                <p class="text-primary-200 text-sm">
+                    © 2025 Algorithm Visualizer. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

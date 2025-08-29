@@ -1,0 +1,104 @@
+/* explorer.css */
+
+/* General Layout */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb; /* light gray background */
+  color: #1f2937; /* gray-800 */
+}
+
+/* Page Header */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1E3A8A; /* primary blue */
+}
+
+p {
+  color: #6B7280; /* gray-500 */
+}
+
+/* Search Bar */
+#searchInput {
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #2563EB; /* blue-600 */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+/* Stats Row */
+.stats-box {
+  text-align: center;
+}
+
+.stats-box .number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1E3A8A;
+}
+
+.stats-box .label {
+  font-size: 0.875rem;
+  color: #6B7280;
+}
+
+/* Categories Sidebar */
+#categoryList button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  color: #374151; /* gray-700 */
+  background: #f3f4f6; /* gray-100 */
+  border-radius: 0.5rem;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#categoryList button:hover {
+  background: #1E3A8A; /* primary blue */
+  color: #fff;
+}
+
+#categoryList button span:last-child {
+  background: #e5e7eb; /* gray-200 */
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+/* Algorithm Cards */
+#algorithmsContainer .card {
+  background: #fff;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#algorithmsContainer .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#algorithmsContainer .card h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+#algorithmsContainer .card p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
