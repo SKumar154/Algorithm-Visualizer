@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Sort - Algorithm Visualizer</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Falgorithm1524back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-md border-b border-border sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="homepage.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-primary">Algorithm Visualizer</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="algorithm_explorer.html" class="text-text-secondary hover:text-primary transition-colors">Explore</a>
+                    <a href="interactive_visualizer.html" class="text-text-secondary hover:text-primary transition-colors">Visualizer</a>
+                    <a href="learning_pathways.html" class="text-text-secondary hover:text-primary transition-colors">Learn</a>
+                    <a href="code_laboratory.html" class="text-text-secondary hover:text-primary transition-colors">Code Lab</a>
+                    <a href="community_hub.html" class="text-text-secondary hover:text-primary transition-colors">Community</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-text-secondary hover:text-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Visualizer Interface -->
+    <div class="min-h-screen bg-surface">
+        <!-- Top Toolbar -->
+        <div class="bg-white border-b border-border px-4 py-3">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <!-- Algorithm Selection -->
+                <div class="flex items-center space-x-4">
+                    <h2 class="text-xl font-bold text-primary">Quick Sort Algorithm</h2>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="flex items-center space-x-3">
+                    <button class="px-4 py-2 bg-accent text-white rounded-lg text-sm font-medium hover:bg-accent-600 transition-colors" id="playBtn">
+                        <svg class="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        Play
+                    </button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300 transition-colors" id="pauseBtn">
+                        <svg class="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                        </svg>
+                        Pause
+                    </button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300 transition-colors" id="stepBtn">
+                        <svg class="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                        </svg>
+                        Step
+                    </button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300 transition-colors" id="resetBtn">
+                        <svg class="w-4 h-4 inline mr-1" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+                        </svg>
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="max-w-7xl mx-auto p-4">
+            <div class="grid lg:grid-cols-12 gap-6">
+                <!-- Left Panel - Step-by-Step Explanation -->
+                <div class="lg:col-span-6">
+                    <div class="card h-full">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-primary">Quick Sort Steps</h3>
+                        </div>
+                        <div class="rounded-lg p-1 overflow-y-auto max-h-96">
+                            <div class="space-y-4 viz-steps" id="stepsContainer">
+                                <div class="step-item"><div class="step-number bg-primary text-white rounded-full">1</div><div class="step-content"><div class="step-title">Choose Pivot</div><div class="step-desc">Select a pivot element from the array (usually the last element).</div></div></div>
+                                <div class="step-item"><div class="step-number bg-primary text-white rounded-full">2</div><div class="step-content"><div class="step-title">Partition Array</div><div class="step-desc">Rearrange elements so that all elements smaller than pivot are on the left.</div></div></div>
+                                <div class="step-item"><div class="step-number bg-primary text-white rounded-full">3</div><div class="step-content"><div class="step-title">Place Pivot</div><div class="step-desc">Place the pivot in its correct sorted position.</div></div></div>
+                                <div class="step-item"><div class="step-number bg-primary text-white rounded-full">4</div><div class="step-content"><div class="step-title">Recursive Sort</div><div class="step-desc">Recursively apply QuickSort to left and right subarrays.</div></div></div>
+                                <div class="step-item"><div class="step-number bg-primary text-white rounded-full">5</div><div class="step-content"><div class="step-title">Combine Results</div><div class="step-desc">The array is sorted when all recursive calls complete.</div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel - Visualization Canvas -->
+                <div class="lg:col-span-6">
+                    <div class="card">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-lg font-semibold text-primary">Quick Sort Visualization</h3>
+                            <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                                <span>Array Size: 16</span>
+                                <span>•</span>
+                                <span>Step: 0/28</span>
+                            </div>
+                        </div>
+
+                        <!-- Visualization Canvas -->
+                        <div class="bg-gray-50 rounded-lg p-6 mb-4" style="min-height: 300px;">
+                            <div class="flex items-end justify-center space-x-1 h-64" id="visualizationCanvas">
+                                <!-- Quick Sort Bars -->
+                                <div class="w-4 bg-primary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 60%" data-value="12">12</div>
+                                <div class="w-4 bg-secondary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 85%" data-value="17">17</div>
+                                <div class="w-4 bg-primary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 40%" data-value="8">8</div>
+                                <div class="w-4 bg-accent-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 95%" data-value="19">19</div>
+                                <div class="w-4 bg-primary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 70%" data-value="14">14</div>
+                                <div class="w-4 bg-secondary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 30%" data-value="6">6</div>
+                                <div class="w-4 bg-primary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 80%" data-value="16">16</div>
+                                <div class="w-4 bg-accent-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 50%" data-value="10">10</div>
+                                <div class="w-4 bg-primary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 75%" data-value="15">15</div>
+                                <div class="w-4 bg-secondary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 35%" data-value="7">7</div>
+                                <div class="w-4 bg-primary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 90%" data-value="18">18</div>
+                                <div class="w-4 bg-accent-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 45%" data-value="9">9</div>
+                                <div class="w-4 bg-primary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 65%" data-value="13">13</div>
+                                <div class="w-4 bg-secondary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 25%" data-value="5">5</div>
+                                <div class="w-4 bg-primary-400 rounded-t transition-all duration-800 flex items-end justify-center text-xs text-white font-medium pb-1" style="height: 55%" data-value="11">11</div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-text-secondary mb-2">
+                                <span>Progress</span>
+                                <span>0% Complete</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-3 cursor-pointer" id="progressBar">
+                                <div class="bg-accent h-3 rounded-full transition-all duration-300" style="width: 0%" id="progressFill"></div>
+                            </div>
+                        </div>
+
+                        <!-- Color Legend -->
+                        <div class="flex flex-wrap items-center justify-center gap-4 text-sm">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-primary-400 rounded"></div>
+                                <span>Unsorted</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-accent-400 rounded"></div>
+                                <span>Pivot</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-secondary-400 rounded"></div>
+                                <span>Comparing</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-accent rounded"></div>
+                                <span>Sorted</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Panel - Complexity & Code -->
+            <div class="grid lg:grid-cols-12 gap-6 mt-6">
+                <!-- Complexity Analysis -->
+                <div class="lg:col-span-6 card h-full">
+                    <h3 class="text-lg font-semibold text-primary mb-4">Complexity Analysis</h3>
+                    <div class="space-y-4">
+                        <div class="info-box info-box-blue">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-primary">Time Complexity</span>
+                            </div>
+                            <div class="grid grid-cols-3 gap-3 text-sm">
+                                <div class="text-center"><div class="text-primary font-medium">Best</div><div class="text-text-secondary">O(n log n)</div></div>
+                                <div class="text-center"><div class="text-primary font-medium">Average</div><div class="text-text-secondary">O(n log n)</div></div>
+                                <div class="text-center"><div class="text-primary font-medium">Worst</div><div class="text-text-secondary">O(n²)</div></div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box-blue">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-primary">Space Complexity</span>
+                                <span class="text-sm text-primary font-medium text-center w-24">O(log n)</span>
+                            </div>
+                            <div class="text-xs text-text-secondary">Due to recursive call stack</div>
+                        </div>
+
+                        <div class="info-box info-box-blue">
+                            <div class="text-sm font-medium text-text-primary mb-2">Key Features</div>
+                            <div class="text-sm text-text-secondary space-y-1">
+                                <div>• In-place sorting algorithm</div>
+                                <div>• Cache-friendly for small arrays</div>
+                                <div>• Good average-case performance</div>
+                                <div>• Unstable sorting</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code of the Algorithm -->
+                <div class="lg:col-span-6 card h-full">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-semibold text-primary">Quick Sort Implementation</h3>
+                        <select class="form-input w-24 text-sm" id="languageSelect">
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="cpp">C++</option>
+                        </select>
+                    </div>
+                    <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm overflow-y-auto max-h-96">
+                        <div class="text-gray-300" id="codeContainer">
+                            <div class="text-blue-400">def</div> <div class="text-yellow-300 inline">quicksort</div><div class="text-gray-300 inline">(arr, low, high):</div>
+                            <div class="ml-4 text-purple-400">if</div> <div class="text-gray-300 inline">low < high:</div>
+                            <div class="ml-8 text-gray-300">pi = partition(arr, low, high)</div>
+                            <div class="ml-8 text-gray-300">quicksort(arr, low, pi - 1)</div>
+                            <div class="ml-8 text-gray-300">quicksort(arr, pi + 1, high)</div>
+                            <br />
+                            <div class="text-blue-400">def</div> <div class="text-yellow-300 inline">partition</div><div class="text-gray-300 inline">(arr, low, high):</div>
+                            <div class="ml-4 text-gray-300">pivot = arr[high]</div>
+                            <div class="ml-4 text-gray-300">i = low - 1</div>
+                            <br />
+                            <div class="ml-4 text-purple-400">for</div> <div class="text-gray-300 inline">j in range(low, high):</div>
+                            <div class="ml-8 text-purple-400">if</div> <div class="text-gray-300 inline">arr[j] <= pivot:</div>
+                            <div class="ml-12 text-gray-300">i += 1</div>
+                            <div class="ml-12 text-gray-300">arr[i], arr[j] = arr[j], arr[i]</div>
+                            <br />
+                            <div class="ml-4 text-gray-300">arr[i + 1], arr[high] = arr[high], arr[i + 1]</div>
+                            <div class="ml-4 text-purple-400">return</div> <div class="text-gray-300 inline">i + 1</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Copy Code Button -->
+                    <button class="w-full mt-3 px-4 py-2 bg-gray-200 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-300 transition-colors">
+                        <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                        </svg>
+                        Copy Code
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Basic interactivity for Quick Sort visualization
+        document.addEventListener('DOMContentLoaded', function() {
+            const playBtn = document.getElementById('playBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const stepBtn = document.getElementById('stepBtn');
+            const resetBtn = document.getElementById('resetBtn');
+            const progressFill = document.getElementById('progressFill');
+            const stepsContainer = document.getElementById('stepsContainer');
+            const languageSelect = document.getElementById('languageSelect');
+
+            let currentStep = 0;
+            let totalSteps = 28;
+            let intervalRef = null;
+
+            // Language-specific code implementations
+            const codeImplementations = {
+                python: `def quicksort(arr, low, high):
+    if low < high:
+        pi = partition(arr, low, high)
+        quicksort(arr, low, pi - 1)
+        quicksort(arr, pi + 1, high)
+
+def partition(arr, low, high):
+    pivot = arr[high]
+    i = low - 1
+    
+    for j in range(low, high):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    
+    arr[i + 1], arr[high] = arr[high], arr[i + 1]
+    return i + 1`,
+                java: `public class QuickSort {
+    public static void quickSort(int[] arr, int low, int high) {
+        if (low < high) {
+            int pi = partition(arr, low, high);
+            quickSort(arr, low, pi - 1);
+            quickSort(arr, pi + 1, high);
+        }
+    }
+    
+    public static int partition(int[] arr, int low, int high) {
+        int pivot = arr[high];
+        int i = low - 1;
+        
+        for (int j = low; j < high; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+        return i + 1;
+    }
+}`,
+                cpp: `void quickSort(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
+int partition(int arr[], int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+    
+    for (int j = low; j < high; j++) {
+        if (arr[j] <= pivot) {
+            i++;
+            swap(arr[i], arr[j]);
+        }
+    }
+    
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}`
+            };
+
+            function updateCodeDisplay() {
+                const language = languageSelect.value;
+                const code = codeImplementations[language];
+                const container = document.getElementById('codeContainer');
+                if (code) {
+                    container.innerHTML = `<pre class="text-gray-300 whitespace-pre-wrap">${code}</pre>`;
+                }
+            }
+
+            languageSelect.addEventListener('change', updateCodeDisplay);
+
+            playBtn.addEventListener('click', function() {
+                if (intervalRef) return;
+                intervalRef = setInterval(tick, 1000);
+            });
+
+            stepBtn.addEventListener('click', function() {
+                if (currentStep < totalSteps) {
+                    tick();
+                }
+            });
+
+            resetBtn.addEventListener('click', function() {
+                currentStep = 0;
+                clearInterval(intervalRef);
+                intervalRef = null;
+                updateProgress();
+                updateStepsVisualization();
+            });
+
+            pauseBtn.addEventListener('click', function() {
+                clearInterval(intervalRef);
+                intervalRef = null;
+            });
+
+            function updateProgress() {
+                const percentage = (currentStep / totalSteps) * 100;
+                progressFill.style.width = percentage + '%';
+            }
+
+            function tick() {
+                if (currentStep >= totalSteps) {
+                    clearInterval(intervalRef);
+                    intervalRef = null;
+                    return;
+                }
+                currentStep++;
+                updateProgress();
+                updateStepsVisualization();
+            }
+
+            function updateStepsVisualization() {
+                const items = stepsContainer.querySelectorAll('.step-number');
+                items.forEach((dot, index) => {
+                    dot.classList.remove('opacity-60');
+                    if (currentStep === 0) return;
+                    const stepThreshold = Math.ceil(((index + 1) / items.length) * totalSteps);
+                    if (currentStep < stepThreshold) {
+                        dot.classList.add('opacity-60');
+                    }
+                });
+            }
+
+            // Initialize
+            updateCodeDisplay();
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-dataInjector.js"></script>
+</body>
+</html>

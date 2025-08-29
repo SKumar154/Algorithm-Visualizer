@@ -273,9 +273,16 @@
       container.innerHTML = "";
       categories[category].forEach(algo => {
         const card = document.createElement("div");
-        card.className = "card card-hover p-4 rounded-lg shadow-md bg-white";
+        card.className = "card card-hover p-4 rounded-lg shadow-md bg-white cursor-pointer";
         card.innerHTML = `<h4 class="font-semibold text-lg mb-2">${algo}</h4>
                           <p class="text-sm text-text-secondary">Learn and visualize ${algo} in detail.</p>`;
+        
+        // Add click event to redirect to algorithm page
+        card.addEventListener("click", () => {
+          const algorithmSlug = algo.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+          window.location.href = `algorithm_${algorithmSlug}.html`;
+        });
+        
         container.appendChild(card);
       });
     }
@@ -288,9 +295,16 @@
       container.innerHTML = "";
       Object.values(categories).flat().filter(algo => algo.toLowerCase().includes(query)).forEach(algo => {
         const card = document.createElement("div");
-        card.className = "card card-hover p-4 rounded-lg shadow-md bg-white";
+        card.className = "card card-hover p-4 rounded-lg shadow-md bg-white cursor-pointer";
         card.innerHTML = `<h4 class="font-semibold text-lg mb-2">${algo}</h4>
                           <p class="text-sm text-text-secondary">Learn and visualize ${algo} in detail.</p>`;
+        
+        // Add click event to redirect to algorithm page
+        card.addEventListener("click", () => {
+          const algorithmSlug = algo.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+          window.location.href = `algorithm_${algorithmSlug}.html`;
+        });
+        
         container.appendChild(card);
       });
     });
